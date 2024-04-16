@@ -17,10 +17,10 @@ alt.themes.enable("dark")
 
 #######################
 # 데이터 불러오기
-df = pd.read_csv('/Dashboard/지역 별 건강점수.csv', encoding='utf-8')
+df = pd.read_csv('./data/지역 별 건강점수.csv', encoding='utf-8')
 
 # 한국 지도 데이터
-with open('./Dashboard/korea_geojson2.geojson', encoding='UTF-8') as f:
+with open('./data/korea_geojson2.geojson', encoding='UTF-8') as f:
     data_geojson = json.load(f)
     
 # 각 지역의 이름 변경
