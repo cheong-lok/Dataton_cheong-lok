@@ -17,10 +17,10 @@ alt.themes.enable("dark")
 
 #######################
 # 데이터 불러오기
-df = pd.read_csv('./dashboard/data/health_scores_by_region.csv', encoding='utf-8')
+df = pd.read_csv('./data/health_scores_by_region.csv', encoding='utf-8')
 
 # 한국 지도 데이터
-with open('./dashboard/data/korea_geojson2.geojson', encoding='UTF-8') as f:
+with open('./data/korea_geojson2.geojson', encoding='UTF-8') as f:
     data_geojson = json.load(f)
     
 # 각 지역의 이름 변경
@@ -111,7 +111,7 @@ with col[0]:
     
 
 with col[1]:
-    st.markdown('#### 지도')
+    st.markdown(f'#### 지역 별 {selected_category} 지도')
     choropleth = make_choropleth(df, data_geojson, selected_category, selected_color_theme)
     st.plotly_chart(choropleth, use_container_width=True)
     st.write('지도 위에 마우스를 올리면 지역 별 점수를 확인하실 수 있습니다.')
